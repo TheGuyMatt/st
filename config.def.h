@@ -57,6 +57,18 @@ static unsigned int blinktimeout = 800;
 static unsigned int cursorthickness = 2;
 
 /*
+ * 1: render most of the lines/blocks characters without using the font for
+ *    perfect alignment between cells (U2500 - U259F except dashes/diagonals).
+ *    Bold affects lines thickness if boxdraw_bold is not 0. Italic is ignored.
+ * 0: disable (render all U25XX glyphs normally from the font).
+ */
+const int boxdraw = 0;
+const int boxdraw_bold = 0;
+
+/* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
+const int boxdraw_braille = 0;
+
+/*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
  * it
  */
@@ -81,6 +93,9 @@ char *termname = "st-256color";
  *	stty tabs
  */
 unsigned int tabspaces = 8;
+
+/* bg opacity */
+float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -109,6 +124,7 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
+	"black",
 };
 
 
@@ -117,7 +133,7 @@ static const char *colorname[] = {
  * foreground, background, cursor, reverse cursor
  */
 unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
+unsigned int defaultbg = 258;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
