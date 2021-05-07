@@ -6,7 +6,8 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 //static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-static char *font = "Hack Nerd Font:size=12";
+//static char *font = "Hack Nerd Font:size=12";
+static char *font = "MesloLGS NF:size=12";
 static int borderpx = 2;
 
 /*
@@ -96,7 +97,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 0.9f;
 
 /* Terminal colors (16 first used in escape sequence) */
 //static const char *colorname[] = {
@@ -153,34 +154,38 @@ float alpha = 0.8;
 //};
 
 /* Terminal colors (16 first used in escape sequence) */
-/* Baskerville Count Von Count colors */
 static const char *colorname[] = {
   /* 8 normal colors */
-  [0] = "#303030", /* hard contrast: #1d2021 / soft contrast: #32302f */
-  [1] = "#c10023", /* red     */
-  [2] = "#a83334", /* green   */
-  [3] = "#b51d2c", /* yellow  */
-  [4] = "#8c4b46", /* blue    */
-  [5] = "#7d534f", /* magenta */
-  [6] = "#9a413d", /* cyan    */
-  [7] = "#c6c6c6", /* white   */
+  [0] = "#212121", /* hard contrast: #1d2021 / soft contrast: #32302f */
+  [1] = "#f07178", /* red     */
+  [2] = "#c3e88d", /* green   */
+  [3] = "#ffcb6b", /* yellow  */
+  [4] = "#82aaff", /* blue    */
+  [5] = "#c792ea", /* magenta */
+  [6] = "#89ddff", /* cyan    */
+  [7] = "#eeffff", /* white   */
 
   /* 8 bright colors */
-  [8]  = "#5e5e5e", /* black   */
-  [9]  = "#ff8781", /* red     */
-  [10] = "#ffa095", /* green   */
-  [11] = "#ff948b", /* yellow  */
-  [12] = "#feb2aa", /* blue    */
-  [13] = "#ebbbb5", /* magenta */
-  [14] = "#ffaaa0", /* cyan    */
+  [8]  = "#4a4a4a", /* black   */
+  [9]  = "#f07178", /* red     */
+  [10] = "#c3e88d", /* green   */
+  [11] = "#ffcb6b", /* yellow  */
+  [12] = "#82aaff", /* blue    */
+  [13] = "#c792ea", /* magenta */
+  [14] = "#89ddff", /* cyan    */
   [15] = "#ffffff", /* white   */
+
+  "add8e6",
+  "555555",
+  "282828",
+  "ebdbb2",
 };
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor
  */
-//unsigned int defaultfg = 7;
+//unsigned int defaultfg = 259;
 //unsigned int defaultbg = 258;
 //static unsigned int defaultcs = 256;
 //static unsigned int defaultrcs = 257;
